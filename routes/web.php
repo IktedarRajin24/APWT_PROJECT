@@ -29,6 +29,7 @@ Route::get('/logout',[loginController::class,'logout'])->name('logout');
 
 Route::get('/dashboard',[DeliverymanController::class,'dashboard'])->name('dashboard')->middleware('verifyUser');
 Route::get('/deliverymanEdit/{id}/{name}',[DeliverymanController::class,'deliverymanEdit'])->name('deliverymanEdit')->middleware('verifyUser');
+Route::get('/deliverymanEdit',[DeliverymanController::class,'deliverymanEditSubmitted'])->name('deliverymanEdit')->middleware('verifyUser');
 
 
 

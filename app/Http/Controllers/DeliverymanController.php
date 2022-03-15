@@ -19,4 +19,15 @@ class DeliverymanController extends Controller
         return view('User.deliverymanEdit')->with('deliveryman',$deliveryman);
     }
 
+    public Function deliverymanEditSubmitted(Request $request){
+        $deliveryman = deliveryman::where('id', $request->id)->first();
+        $deliveryman->name = $request->name;
+        $deliveryman->email = $request->email;
+        $deliveryman->phone = $request->phone;
+        $deliveryman->address = $request->address;
+        $deliveryman->password = $request->password;
+        $deliveryman->save();
+        return view('User.profile')->with('deliveryman',$deliveryman);
+    }
+
 }

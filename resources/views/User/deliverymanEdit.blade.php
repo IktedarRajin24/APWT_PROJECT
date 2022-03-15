@@ -6,7 +6,7 @@
         <br>
         <br>
         <br>
-        <h2>Create student</h2>
+        <h2>Edit</h2>
             <form method="post" action= "{{route('deliverymanEdit')}}" class= "form form-group" >
                 {{csrf_field()}}
                 <label for="id">ID:</label>
