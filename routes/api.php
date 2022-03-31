@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\productControllerAPI;
+use App\Http\Controllers\deliverymanControllerAPI;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/Product/productList',[productControllerAPI::class,'productList']);
+Route::post('/User/signUp', [deliverymanControllerAPI::class, 'registration']);
